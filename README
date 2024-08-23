@@ -1,0 +1,69 @@
+We will use Convolutional Neural Network to build train and test a traffic sign classification model. We will build this model using tensorflow and keras. It is a multiclass classification problem. This model can be used to make smarter cars.
+
+We will start by connecting to Kaggle using Kaggle API which can be downloaded from your Kaggle account's settings and uploading it here(upload box).
+
+Installing kaggle api using pip
+
+Setting up Kaggle using Kaggle API.
+
+To store the data we will create a new directory and make it as current working directory.
+
+Searching Kaggle for the required dataset using search option(-s) with title 'dogbreedidfromcomp'. We can also use different search options like searching competitions, notebooks, kernels, datasets, etc.
+
+After searching the data next step would be downloading the data into collab notebook using references found in search option.
+
+We will unzip the data which is downloaded and remove the irrelevant files.
+
+Importing required libraries.
+
+Visualizing some images of traffic sign from the test dataset. we can see here that the dimension of images are uneven.
+
+For further processing we will require the images of same dimension. So, we will start storing the dimension of all the images from training dataset from all 43 classes.
+
+Now we will find out the mean value of both the dimensions and analyse them. Here, we can see that (50,50) is the average shape for all the images.
+
+Now we will reshape the images into (50,50) and also store their label ids.
+
+Now we will convert all the images into numpy array and normalize them.
+
+Storing the label ids into numpy array and printing the shape. Here we can observe that their are 39209 label ids.
+
+Checking the shape of the images. Here we can see that their are 39209 images with a shape of (50,50,3.)
+
+Now we will observe images per class for checking whether the data is balanced or not. From the result we can say that data is balanced.
+
+The next step would be to split the data into training and validation with 80% of training data and 20% of validation data.
+
+Converting the classes column into categorical using to_categorical() function.
+
+Defining the model architecture. In this we will define all the layers with their input shape kernel size, activation, etc.
+
+Compiling the model using metrics, optimizer and loss as required and printing out the summary of the model.
+
+Now we will fit the model and observe how our is getting trained on each epoch.
+
+Next we will visualize the accuracy and loss per epoch. For this we will store the model history in the pandas dataframe and plot them.
+
+Creating the variable which has path of test dataset. As we downloded the dataset we found out that their is a GT-final_test.csv file in the test images folder which cannot be processed. So, we will remove that file.
+
+Next step would we creating a function to resize the test images converting them into a numpy array and normalize them.
+
+created function on test images.
+
+label ids from Test.csv and store the values of the class id in y_test variable.
+
+Now we will use the model to make predictions on our test images and save them in y_pred.
+
+Storing the labels according to the image classes.
+
+Let's visualize test image
+
+Finding out original label for the image
+
+Finding out the predicted label for the image
+
+### Conclusion:
+We started with downloading the dataset, preprocessing it, created the model and found out the predictions using the model. During preprocessing we found that this dataset has 43 classes. Model reached an accuracy of 95%+ in just 50 epochs, we can further optimize the model using hyper parameter tuning and reach a higher accuracy.
+
+### Scope:
+This model can be used in self driving cars which will enable them to automatically recognize traffic signs similarly the driver alert system inside cars will help and protect drivers by understanding the traffic signs around them.
