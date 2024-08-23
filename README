@@ -62,6 +62,8 @@ Finding out original label for the image
 
 Finding out the predicted label for the image
 
+https://drive.google.com/file/d/1R07uakf855o6qvXF1jOQwYVHm8rDVW_g/view
+
 ### Conclusion:
 We started with downloading the dataset, preprocessing it, created the model and found out the predictions using the model. During preprocessing we found that this dataset has 43 classes. Model reached an accuracy of 95%+ in just 50 epochs, we can further optimize the model using hyper parameter tuning and reach a higher accuracy.
 
